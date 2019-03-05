@@ -8,7 +8,7 @@ def readme():
 
 setup(
     name='dumpit',
-    version='0.1.0',
+    version='0.1.1',
 
     description='Print python objects like a boss',
     long_description=readme(),
