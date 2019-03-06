@@ -1,8 +1,9 @@
 import unittest
 
 from dumpit.indent import Indent
-from dumpit.analyse import Object
 from dumpit.export import ToString
+from dumpit.analyse import Vertical
+from dumpit.coloring import NoColors
 
 
 class TestAnalyse(unittest.TestCase):
@@ -14,13 +15,14 @@ class TestAnalyse(unittest.TestCase):
 
         self._object = TestObject()
         self._indent = Indent(depth=0)
-        self._export = ToString(delimiter='')
+        self._export = ToString(delimiter='',
+                                coloring=NoColors())
 
         self.maxDiff = None
 
     def test_analyse(self):
-        analyse = Object(self._object, self._indent, self._export)
+        analyse = Vertical(self._object, self._indent, self._export)
 
         self.assertTrue(
             analyse.analyse()
-                .endswith("bar: type: <class 'str'>foo: type: <class 'str'>"))
+                .startswith("foo: type: <class 'str'>bar: type: <class 'str'>"))

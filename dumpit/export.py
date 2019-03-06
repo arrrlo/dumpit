@@ -2,21 +2,29 @@ import click
 from typing import Any, AnyStr
 from abc import abstractmethod
 
+from dumpit.coloring import Coloring
+
 
 class Export:
     """Export abstract class."""
 
-    def __init__(self, delimiter: AnyStr):
+    def __init__(self, delimiter: AnyStr,
+                 coloring: 'Coloring'):
         self._exported = list()
         self._delimiter = delimiter
+        self._coloring = coloring
 
     @abstractmethod
     def export(self) -> Any:
         """Do the abstract export."""
 
-    def store(self, text: AnyStr) -> None:
+    def store(self,
+              text: AnyStr,
+              fg: AnyStr = None,
+              bg: AnyStr = None) -> None:
         """Store text in export object."""
 
+        text = self._coloring.style(text, fg=fg, bg=bg)
         self._exported.append(text)
 
 
