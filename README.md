@@ -29,3 +29,14 @@ from dumpit import fdumpit
 my_var = fdumpit(__some_object__)
 ```
 
+### Coloring
+
+```python
+from dumpit import fdumpit, pdumpit
+
+# default is colors='terminal'
+my_var = pdumpit(__some_object__, colors=False)
+
+# default is colors=False
+my_var = fdumpit(__some_object__, colors='terminal')
+```

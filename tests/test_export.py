@@ -1,6 +1,7 @@
 import unittest
 
 from dumpit.export import ToString
+from dumpit.coloring import NoColors
 
 
 class TestExport(unittest.TestCase):
@@ -9,7 +10,8 @@ class TestExport(unittest.TestCase):
         self._delimiter = '\n'
 
     def test_export(self):
-        export = ToString(delimiter=self._delimiter)
+        export = ToString(delimiter=self._delimiter,
+                          coloring=NoColors())
 
         export.store('foo')
         export.store('bar')
