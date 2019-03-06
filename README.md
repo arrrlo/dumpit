@@ -13,30 +13,39 @@ Works with python 3.x
 pip install dumpit
 ```
 
-### Print object to standard output
+### Usage
 
 ```python
-from dumpit import pdumpit
+from dumpit import pdumpit, fdumpit
 
-pdumpit(__some_object__)
+my_object = ...
+
+# Print object to standard output
+pdumpit(my_object)
+
+#Print object to standard output in vertical view
+pdumpit(my_object, view_='vertical') # vertical | table
+
+# Export object to string as text
+my_var = fdumpit(my_object)
+
+# Disable colors in terminal output
+pdumpit(my_object, colors=False) # False | terminal
+
+# Enable colors in string output
+my_var = fdumpit(my_object, colors='terminal')
 ```
 
-### Export object to string as text
+# CHANGELOG
 
-```python
-from dumpit import fdumpit
+## 0.3.0
 
-my_var = fdumpit(__some_object__)
-```
+#### Added:
+- Analyse is now view.
+- Table view support: Print object contents in table view in terminal.
+- Warnings: Prints warnings in terminal if unknown coloring or view is used.
 
-### Coloring
+## 0.2.0
 
-```python
-from dumpit import fdumpit, pdumpit
-
-# default is colors='terminal'
-my_var = pdumpit(__some_object__, colors=False)
-
-# default is colors=False
-my_var = fdumpit(__some_object__, colors='terminal')
-```
+#### Added:
+- Coloring support: Terminal colors for object attributes.  

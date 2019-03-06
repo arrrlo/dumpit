@@ -1,8 +1,8 @@
 import unittest
 
+from dumpit.view import Vertical
 from dumpit.indent import Indent
 from dumpit.export import ToString
-from dumpit.analyse import Vertical
 from dumpit.coloring import NoColors
 
 
@@ -20,9 +20,9 @@ class TestAnalyse(unittest.TestCase):
 
         self.maxDiff = None
 
-    def test_analyse(self):
-        analyse = Vertical(self._object, self._indent, self._export)
+    def test_run(self):
+        view = Vertical(self._object, self._indent, self._export)
 
         self.assertTrue(
-            analyse.analyse()
+            view.run()
                 .startswith("foo: type: <class 'str'>bar: type: <class 'str'>"))
