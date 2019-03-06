@@ -36,7 +36,7 @@ pdumpit(my_object, colors=False) # False | terminal
 my_var = fdumpit(my_object, colors='terminal')
 ```
 
-# CHANGELOG
+# Changelog
 
 ## 0.3.0
 
