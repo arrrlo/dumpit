@@ -1,6 +1,6 @@
 import click
-from typing import Any, AnyStr
 from abc import abstractmethod
+from typing import Any, AnyStr, List
 
 from dumpit.coloring import Coloring
 
@@ -15,7 +15,7 @@ class Export:
         self._coloring = coloring
 
     @abstractmethod
-    def export(self) -> Any:
+    def export(self, *args, **kwargs) -> Any:
         """Do the abstract export."""
 
     def store(self,

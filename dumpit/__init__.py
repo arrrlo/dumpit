@@ -1,37 +1,56 @@
-from typing import Any, AnyStr, Union
+from typing import Any, AnyStr, Union, Type
 
 from dumpit.indent import Indent
-from dumpit.analyse import Vertical
 from dumpit.export import Print, ToString
-from dumpit.coloring import TerminalColors, NoColors, Coloring
+from dumpit.view import (Vertical, Table,
+                         VerticalWithWarning)
+from dumpit.coloring import (TerminalColors, NoColors,
+                             NoColorsWithWarning)
 
 
-def coloring_object(colors: AnyStr) -> 'Coloring':
+ViewsType = Type[Union[Vertical, Table, VerticalWithWarning]]
+ColoringType = Union[TerminalColors, NoColors, NoColorsWithWarning]
+
+
+def __view_class(view: AnyStr) -> ViewsType:
     """Choose which coloring object."""
 
     return {
-       'terminal': TerminalColors,
+        'vertical': Vertical,
+        'table': Table,
 
-    }.get(colors, NoColors)()
+    }.get(view, VerticalWithWarning)
+
+
+def __coloring_object(colors: AnyStr) -> ColoringType:
+    """Choose which coloring object."""
+
+    return {
+        'terminal': TerminalColors,
+        False: NoColors
+
+    }.get(colors, NoColorsWithWarning)()
 
 
 def pdumpit(object_: Any,
+            view_: AnyStr = 'table',
             colors: Union[bool, str] = 'terminal') -> None:
     """Export object to standard output."""
 
     indent_ = Indent(depth=4)
     export_ = Print(delimiter='\n',
-                    coloring=coloring_object(colors))
+                    coloring=__coloring_object(colors))
 
-    Vertical(object_, indent_, export_).analyse()
+    __view_class(view_)(object_, indent_, export_).run()
 
 
 def fdumpit(object_: Any,
+            view_: AnyStr = 'vertical',
             colors: Union[bool, str] = False) -> AnyStr:
     """Export object to string."""
 
     indent_ = Indent(depth=4)
     export_ = ToString(delimiter='\n',
-                       coloring=coloring_object(colors))
+                       coloring=__coloring_object(colors))
 
-    return Vertical(object_, indent_, export_).analyse()
+    return __view_class(view_)(object_, indent_, export_).run()

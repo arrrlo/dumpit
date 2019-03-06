@@ -39,3 +39,12 @@ class NoColors(Coloring):
         """No color strings."""
 
         return string
+
+
+class NoColorsWithWarning(NoColors):
+    """Same as Vertical but it prints warning message."""
+
+    def __init__(self):
+        click.secho('You have chosen unknown coloring. '
+                    'Using NoColors instead.', fg='yellow')
+        super().__init__()
