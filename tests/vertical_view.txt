@@ -1,65 +1,7 @@
-foo:type: <class 'str'>desc: str(object='') -> str
-str(bytes_or_buffer[, encoding[, errors]]) -> str
+foo:type: <class 'list'>desc: Built-in mutable sequence.
 
-Create a new string object from the given object. If encoding or
-errors is specified, then the object must expose a data buffer
-that will be decoded using the given encoding and error handler.
-Otherwise, returns the result of object.__str__() (if defined)
-or repr(object).
-encoding defaults to sys.getdefaultencoding().
-errors defaults to 'strict'.bar:type: <class 'str'>desc: str(object='') -> str
-str(bytes_or_buffer[, encoding[, errors]]) -> str
-
-Create a new string object from the given object. If encoding or
-errors is specified, then the object must expose a data buffer
-that will be decoded using the given encoding and error handler.
-Otherwise, returns the result of object.__str__() (if defined)
-or repr(object).
-encoding defaults to sys.getdefaultencoding().
-errors defaults to 'strict'.__weakref__:type: <class 'NoneType'>__subclasshook__:type: <class 'builtin_function_or_method'>desc: Abstract classes can override this to customize issubclass().
-
-This is invoked early on by abc.ABCMeta.__subclasscheck__().
-It should return True, False or NotImplemented.  If it returns
-NotImplemented, the normal algorithm is used.  Otherwise, it
-overrides the normal algorithm (and the outcome is cached).
-__str__:type: <class 'method-wrapper'>desc: String Dunder (Magic) Methods. 
-To get called by built-int str() method 
-to return a string representation of a type.__sizeof__:type: <class 'builtin_function_or_method'>desc: String Dunder (Magic) Methods. 
-To get called by built-int sys.getsizeof() 
-method to return the size of an object.__setattr__:type: <class 'method-wrapper'>args: name, valuedesc: Attribute Dunder (Magic) Methods. 
-Is called when assigning a value to 
-the attribute of a class.__repr__:type: <class 'method-wrapper'>desc: String Dunder (Magic) Methods. 
-To get called by built-int repr() method 
-to return a machine readable representation of a type.__reduce_ex__:type: <class 'builtin_function_or_method'>args: protocoldesc: Helper for pickle.__reduce__:type: <class 'builtin_function_or_method'>desc: Helper for pickle.__new__:type: <class 'builtin_function_or_method'>args: *args, **kwargsdesc: Initialization and Construction. 
-To get called in an object's instantiation.__ne__:type: <class 'method-wrapper'>args: valuedesc: Operator Dunder (Magic) Methods. 
-To get called on comparison using 
-!= operator.__module__:type: <class 'str'>desc: str(object='') -> str
-str(bytes_or_buffer[, encoding[, errors]]) -> str
-
-Create a new string object from the given object. If encoding or
-errors is specified, then the object must expose a data buffer
-that will be decoded using the given encoding and error handler.
-Otherwise, returns the result of object.__str__() (if defined)
-or repr(object).
-encoding defaults to sys.getdefaultencoding().
-errors defaults to 'strict'.__lt__:type: <class 'method-wrapper'>args: valuedesc: Operator Dunder (Magic) Methods. 
-To get called on comparison using 
-< operator.__le__:type: <class 'method-wrapper'>args: valuedesc: Operator Dunder (Magic) Methods. 
-To get called on comparison using 
-<= operator.__init_subclass__:type: <class 'builtin_function_or_method'>desc: This method is called whenever the 
-containing class is subclassed.__init__:type: <class 'method-wrapper'>args: *args, **kwargsdesc: Initialization and Construction. 
-To get called by the __new__ method.__hash__:type: <class 'method-wrapper'>desc: String Dunder (Magic) Methods. 
-To get called by built-int hash() method 
-to return an integer.__gt__:type: <class 'method-wrapper'>args: valuedesc: Called to implement x>y.__getattribute__:type: <class 'method-wrapper'>args: namedesc: Called unconditionally to implement 
-attribute accesses for instances of the class.__ge__:type: <class 'method-wrapper'>args: valuedesc: Operator Dunder (Magic) Methods. 
-To get called on comparison using 
->= operator.__format__:type: <class 'builtin_function_or_method'>args: format_specdesc: String Dunder (Magic) Methods. 
-To get called by built-int string.format() 
-method to return a new style of string.__eq__:type: <class 'method-wrapper'>args: valuedesc: Operator Dunder (Magic) Methods. 
-To get called on comparison using 
-== operator.__doc__:type: <class 'NoneType'>desc: A short documentation which describes the features.__dir__:type: <class 'builtin_function_or_method'>desc: String Dunder (Magic) Methods. 
-To get called by built-int dir() method 
-to return a list of attributes of a class.__dict__:type: <class 'dict'>desc: dict() -> new empty dictionary
+If no argument is given, the constructor creates a new empty list.
+The argument must be an iterable if specified.bar:type: <class 'dict'>desc: dict() -> new empty dictionary
 dict(mapping) -> new dictionary initialized from a mapping object's
     (key, value) pairs
 dict(iterable) -> new dictionary initialized as if via:
@@ -67,6 +9,4 @@ dict(iterable) -> new dictionary initialized as if via:
     for k, v in iterable:
         d[k] = v
 dict(**kwargs) -> new dictionary initialized with the name=value pairs
-    in the keyword argument list.  For example:  dict(one=1, two=2)__delattr__:type: <class 'method-wrapper'>args: namedesc: Attribute Dunder (Magic) Methods. 
-Is called when deleting an attribute 
-of a class.__class__:type: <class 'type'>desc: The class to which a class instance belongs.
+    in the keyword argument list.  For example:  dict(one=1, two=2)

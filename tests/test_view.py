@@ -13,16 +13,18 @@ class TestView(unittest.TestCase):
         self.maxDiff = None
 
         class TestObject:
-            foo = 'foo'
-            bar = 'bar'
+            foo = list()
+            bar = dict()
 
         _object = TestObject()
         _indent = Indent(depth=0, spaceholder='')
         _export = ToString(delimiter='',
                            coloring=NoColors())
 
-        self._vertical_view = Vertical(_object, _indent, _export)
-        self._table_view = Table(_object, _indent, _export)
+        self._vertical_view = Vertical(_object, _indent, _export,
+                                       show_dunders=False)
+        self._table_view = Table(_object, _indent, _export,
+                                 show_dunders=False)
 
         _base_dir = os.path.join(
             os.path.dirname(
