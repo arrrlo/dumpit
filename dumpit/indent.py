@@ -1,3 +1,6 @@
+from typing import AnyStr
+
+
 class Indent:
     """Indentation class."""
 
@@ -21,3 +24,8 @@ class Indent:
         """Return spaces for indentation."""
 
         return self._spaceholder * self._indent
+
+    def spaceholder(self) -> AnyStr:
+        """Returns indent spaceholder."""
+
+        return self._spaceholder

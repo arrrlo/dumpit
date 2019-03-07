@@ -9,6 +9,11 @@ from dumpit.export import Export
 from dumpit.description import get_description
 
 
+OBJECT_TYPE = 'type: '
+OBJECT_ARGS = 'args: '
+OBJECT_DESC = 'desc: '
+
+
 class View:
     """View abstract class."""
 
@@ -42,8 +47,12 @@ class View:
         """Check if the attribute is a dunder method (magic method)."""
 
         return attr_name.startswith('__') and attr_name.endswith('__')
+
+    @abstractmethod
+    def _delimit_argument_list(self, args: List) -> AnyStr:
+        """Separate argument list with characters."""
     
-    def _arguments(self, attribute: Any) -> List:
+    def _arguments(self, attribute: Any) -> AnyStr:
         """Get attributes of a method."""
 
         try:
@@ -55,14 +64,17 @@ class View:
         except TypeError:
             attrs = None
 
-        if attrs:
-            return [str(attr) for attr in dict(attrs).values()]
-        else:
-            return []
+        attrs = [str(attr) for attr in dict(attrs or []).values()]
+        return self._delimit_argument_list(attrs)
 
 
 class Vertical(View):
     """Vertical view class."""
+
+    def _delimit_argument_list(self, args: List) -> AnyStr:
+        """Separate argument list with characters."""
+
+        return ', '.join(args)
 
     def run(self) -> AnyStr:
         """Do the run."""
@@ -76,31 +88,34 @@ class Vertical(View):
             attribute = getattr(self._data, value)
 
             # store objects attribute name
-            self._export.store(f'{value}: ', fg=self._type_color(value))
+            self._export.store(f'{value}:', fg=self._type_color(value))
 
             # second indentation
             with self._indent as indent:
 
                 # store objects attribute type
                 self._export.store(
-                    f'{indent()}type: {str(type(attribute))}',
+                    f'{indent()}{OBJECT_TYPE}{str(type(attribute))}',
                     fg='blue', bold=True
                 )
 
-                attrs_list = self._arguments(attribute)
+                args = self._arguments(attribute)
 
                 # store objects method arguments
-                if attrs_list:
+                if args:
                     self._export.store(
-                        f'{indent()}args: {str(", ".join(attrs_list))}')
+                        f'{indent()}{OBJECT_ARGS}{str(args)}')
 
                 # get attribute description with indentation
-                desc = get_description(attribute, value,
-                                       indent=f'{indent()}      ')
+                sh = self._indent.spaceholder()
+                desc = get_description(
+                    attribute, value,
+                    indent=f'{indent()}{sh*len(OBJECT_DESC)}'
+                )
                 if desc:
                     # store attribute description
                     self._export.store(
-                        f'{indent()}desc: {desc}')
+                        f'{indent()}{OBJECT_DESC}{desc}')
 
                 self._export.store(indent())
 
@@ -120,6 +135,11 @@ class VerticalWithWarning(Vertical):
 class Table(View):
     """Vertical view class."""
 
+    def _delimit_argument_list(self, args: List) -> AnyStr:
+        """Separate argument list with characters."""
+
+        return '\n'.join(args).replace(', ', '\n')
+
     def run(self) -> AnyStr:
         """Do the run."""
 
@@ -134,9 +154,14 @@ class Table(View):
 
             data.append(
                 [
-                    click.style(value, fg=self._type_color(value)),
-                    click.style(str(type(attribute)), fg='blue', bold=True),
-                    '\n'.join(self._arguments(attribute)).replace(', ', '\n'),
+                    self._export.coloring.style(
+                        value, fg=self._type_color(value)),
+
+                    self._export.coloring.style(
+                        str(type(attribute)), fg='blue', bold=True),
+
+                    self._arguments(attribute),
+
                     get_description(attribute, value)
                 ]
             )

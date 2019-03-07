@@ -1,0 +1,130 @@
++-------------------+--------------------------------------+-------------+------------------------------------------------------------------------+
+| name              | type                                 | arguments   | description                                                            |
++-------------------+--------------------------------------+-------------+------------------------------------------------------------------------+
+| foo               | <class 'str'>                        |             | str(object='') -> str                                                  |
+|                   |                                      |             | str(bytes_or_buffer[, encoding[, errors]]) -> str                      |
+|                   |                                      |             |                                                                        |
+|                   |                                      |             | Create a new string object from the given object. If encoding or       |
+|                   |                                      |             | errors is specified, then the object must expose a data buffer         |
+|                   |                                      |             | that will be decoded using the given encoding and error handler.       |
+|                   |                                      |             | Otherwise, returns the result of object.__str__() (if defined)         |
+|                   |                                      |             | or repr(object).                                                       |
+|                   |                                      |             | encoding defaults to sys.getdefaultencoding().                         |
+|                   |                                      |             | errors defaults to 'strict'.                                           |
++-------------------+--------------------------------------+-------------+------------------------------------------------------------------------+
+| bar               | <class 'str'>                        |             | str(object='') -> str                                                  |
+|                   |                                      |             | str(bytes_or_buffer[, encoding[, errors]]) -> str                      |
+|                   |                                      |             |                                                                        |
+|                   |                                      |             | Create a new string object from the given object. If encoding or       |
+|                   |                                      |             | errors is specified, then the object must expose a data buffer         |
+|                   |                                      |             | that will be decoded using the given encoding and error handler.       |
+|                   |                                      |             | Otherwise, returns the result of object.__str__() (if defined)         |
+|                   |                                      |             | or repr(object).                                                       |
+|                   |                                      |             | encoding defaults to sys.getdefaultencoding().                         |
+|                   |                                      |             | errors defaults to 'strict'.                                           |
++-------------------+--------------------------------------+-------------+------------------------------------------------------------------------+
+| __weakref__       | <class 'NoneType'>                   |             |                                                                        |
++-------------------+--------------------------------------+-------------+------------------------------------------------------------------------+
+| __subclasshook__  | <class 'builtin_function_or_method'> |             | Abstract classes can override this to customize issubclass().          |
+|                   |                                      |             |                                                                        |
+|                   |                                      |             | This is invoked early on by abc.ABCMeta.__subclasscheck__().           |
+|                   |                                      |             | It should return True, False or NotImplemented.  If it returns         |
+|                   |                                      |             | NotImplemented, the normal algorithm is used.  Otherwise, it           |
+|                   |                                      |             | overrides the normal algorithm (and the outcome is cached).            |
+|                   |                                      |             |                                                                        |
++-------------------+--------------------------------------+-------------+------------------------------------------------------------------------+
+| __str__           | <class 'method-wrapper'>             |             | String Dunder (Magic) Methods.                                         |
+|                   |                                      |             | To get called by built-int str() method                                |
+|                   |                                      |             | to return a string representation of a type.                           |
++-------------------+--------------------------------------+-------------+------------------------------------------------------------------------+
+| __sizeof__        | <class 'builtin_function_or_method'> |             | String Dunder (Magic) Methods.                                         |
+|                   |                                      |             | To get called by built-int sys.getsizeof()                             |
+|                   |                                      |             | method to return the size of an object.                                |
++-------------------+--------------------------------------+-------------+------------------------------------------------------------------------+
+| __setattr__       | <class 'method-wrapper'>             | name        | Attribute Dunder (Magic) Methods.                                      |
+|                   |                                      | value       | Is called when assigning a value to                                    |
+|                   |                                      |             | the attribute of a class.                                              |
++-------------------+--------------------------------------+-------------+------------------------------------------------------------------------+
+| __repr__          | <class 'method-wrapper'>             |             | String Dunder (Magic) Methods.                                         |
+|                   |                                      |             | To get called by built-int repr() method                               |
+|                   |                                      |             | to return a machine readable representation of a type.                 |
++-------------------+--------------------------------------+-------------+------------------------------------------------------------------------+
+| __reduce_ex__     | <class 'builtin_function_or_method'> | protocol    | Helper for pickle.                                                     |
++-------------------+--------------------------------------+-------------+------------------------------------------------------------------------+
+| __reduce__        | <class 'builtin_function_or_method'> |             | Helper for pickle.                                                     |
++-------------------+--------------------------------------+-------------+------------------------------------------------------------------------+
+| __new__           | <class 'builtin_function_or_method'> | *args       | Initialization and Construction.                                       |
+|                   |                                      | **kwargs    | To get called in an object's instantiation.                            |
++-------------------+--------------------------------------+-------------+------------------------------------------------------------------------+
+| __ne__            | <class 'method-wrapper'>             | value       | Operator Dunder (Magic) Methods.                                       |
+|                   |                                      |             | To get called on comparison using                                      |
+|                   |                                      |             | != operator.                                                           |
++-------------------+--------------------------------------+-------------+------------------------------------------------------------------------+
+| __module__        | <class 'str'>                        |             | str(object='') -> str                                                  |
+|                   |                                      |             | str(bytes_or_buffer[, encoding[, errors]]) -> str                      |
+|                   |                                      |             |                                                                        |
+|                   |                                      |             | Create a new string object from the given object. If encoding or       |
+|                   |                                      |             | errors is specified, then the object must expose a data buffer         |
+|                   |                                      |             | that will be decoded using the given encoding and error handler.       |
+|                   |                                      |             | Otherwise, returns the result of object.__str__() (if defined)         |
+|                   |                                      |             | or repr(object).                                                       |
+|                   |                                      |             | encoding defaults to sys.getdefaultencoding().                         |
+|                   |                                      |             | errors defaults to 'strict'.                                           |
++-------------------+--------------------------------------+-------------+------------------------------------------------------------------------+
+| __lt__            | <class 'method-wrapper'>             | value       | Operator Dunder (Magic) Methods.                                       |
+|                   |                                      |             | To get called on comparison using                                      |
+|                   |                                      |             | < operator.                                                            |
++-------------------+--------------------------------------+-------------+------------------------------------------------------------------------+
+| __le__            | <class 'method-wrapper'>             | value       | Operator Dunder (Magic) Methods.                                       |
+|                   |                                      |             | To get called on comparison using                                      |
+|                   |                                      |             | <= operator.                                                           |
++-------------------+--------------------------------------+-------------+------------------------------------------------------------------------+
+| __init_subclass__ | <class 'builtin_function_or_method'> |             | This method is called whenever the                                     |
+|                   |                                      |             | containing class is subclassed.                                        |
++-------------------+--------------------------------------+-------------+------------------------------------------------------------------------+
+| __init__          | <class 'method-wrapper'>             | *args       | Initialization and Construction.                                       |
+|                   |                                      | **kwargs    | To get called by the __new__ method.                                   |
++-------------------+--------------------------------------+-------------+------------------------------------------------------------------------+
+| __hash__          | <class 'method-wrapper'>             |             | String Dunder (Magic) Methods.                                         |
+|                   |                                      |             | To get called by built-int hash() method                               |
+|                   |                                      |             | to return an integer.                                                  |
++-------------------+--------------------------------------+-------------+------------------------------------------------------------------------+
+| __gt__            | <class 'method-wrapper'>             | value       | Called to implement x>y.                                               |
++-------------------+--------------------------------------+-------------+------------------------------------------------------------------------+
+| __getattribute__  | <class 'method-wrapper'>             | name        | Called unconditionally to implement                                    |
+|                   |                                      |             | attribute accesses for instances of the class.                         |
++-------------------+--------------------------------------+-------------+------------------------------------------------------------------------+
+| __ge__            | <class 'method-wrapper'>             | value       | Operator Dunder (Magic) Methods.                                       |
+|                   |                                      |             | To get called on comparison using                                      |
+|                   |                                      |             | >= operator.                                                           |
++-------------------+--------------------------------------+-------------+------------------------------------------------------------------------+
+| __format__        | <class 'builtin_function_or_method'> | format_spec | String Dunder (Magic) Methods.                                         |
+|                   |                                      |             | To get called by built-int string.format()                             |
+|                   |                                      |             | method to return a new style of string.                                |
++-------------------+--------------------------------------+-------------+------------------------------------------------------------------------+
+| __eq__            | <class 'method-wrapper'>             | value       | Operator Dunder (Magic) Methods.                                       |
+|                   |                                      |             | To get called on comparison using                                      |
+|                   |                                      |             | == operator.                                                           |
++-------------------+--------------------------------------+-------------+------------------------------------------------------------------------+
+| __doc__           | <class 'NoneType'>                   |             | A short documentation which describes the features.                    |
++-------------------+--------------------------------------+-------------+------------------------------------------------------------------------+
+| __dir__           | <class 'builtin_function_or_method'> |             | String Dunder (Magic) Methods.                                         |
+|                   |                                      |             | To get called by built-int dir() method                                |
+|                   |                                      |             | to return a list of attributes of a class.                             |
++-------------------+--------------------------------------+-------------+------------------------------------------------------------------------+
+| __dict__          | <class 'dict'>                       |             | dict() -> new empty dictionary                                         |
+|                   |                                      |             | dict(mapping) -> new dictionary initialized from a mapping object's    |
+|                   |                                      |             |     (key, value) pairs                                                 |
+|                   |                                      |             | dict(iterable) -> new dictionary initialized as if via:                |
+|                   |                                      |             |     d = {}                                                             |
+|                   |                                      |             |     for k, v in iterable:                                              |
+|                   |                                      |             |         d[k] = v                                                       |
+|                   |                                      |             | dict(**kwargs) -> new dictionary initialized with the name=value pairs |
+|                   |                                      |             |     in the keyword argument list.  For example:  dict(one=1, two=2)    |
++-------------------+--------------------------------------+-------------+------------------------------------------------------------------------+
+| __delattr__       | <class 'method-wrapper'>             | name        | Attribute Dunder (Magic) Methods.                                      |
+|                   |                                      |             | Is called when deleting an attribute                                   |
+|                   |                                      |             | of a class.                                                            |
++-------------------+--------------------------------------+-------------+------------------------------------------------------------------------+
+| __class__         | <class 'type'>                       |             | The class to which a class instance belongs.                           |
++-------------------+--------------------------------------+-------------+------------------------------------------------------------------------+
