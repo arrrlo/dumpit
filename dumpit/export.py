@@ -20,11 +20,10 @@ class Export:
 
     def store(self,
               text: AnyStr,
-              fg: AnyStr = None,
-              bg: AnyStr = None) -> None:
+              **kwargs) -> None:
         """Store text in export object."""
 
-        text = self._coloring.style(text, fg=fg, bg=bg)
+        text = self._coloring.style(text, **kwargs)
         self._exported.append(text)
 
 
@@ -34,7 +33,8 @@ class Print(Export):
     def export(self) -> None:
         """Do the export."""
 
-        click.echo(self._delimiter.join(self._exported))
+        click.secho(self._delimiter.join(self._exported),
+                    bg='black')
 
 
 class ToString(Export):

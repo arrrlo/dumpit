@@ -12,8 +12,7 @@ class Coloring:
     @abstractmethod
     def style(self,
               string: AnyStr,
-              fg: AnyStr = None,
-              bg: AnyStr = None) -> AnyStr:
+              **kwargs) -> AnyStr:
         """Color the string or not."""
 
 
@@ -22,11 +21,10 @@ class TerminalColors(Coloring):
 
     def style(self,
               string: AnyStr,
-              fg: AnyStr = None,
-              bg: AnyStr = None) -> AnyStr:
+              **kwargs) -> AnyStr:
         """Color strings."""
 
-        return click.style(string, fg=fg, bg=bg)
+        return click.style(string, **kwargs)
 
 
 class NoColors(Coloring):
@@ -34,8 +32,7 @@ class NoColors(Coloring):
 
     def style(self,
               string: AnyStr,
-              fg: AnyStr = None,
-              bg: AnyStr = None) -> AnyStr:
+              **kwargs) -> AnyStr:
         """No color strings."""
 
         return string
