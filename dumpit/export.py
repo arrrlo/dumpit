@@ -12,7 +12,7 @@ class Export:
                  coloring: 'Coloring'):
         self._exported = list()
         self._delimiter = delimiter
-        self._coloring = coloring
+        self.coloring = coloring
 
     @abstractmethod
     def export(self, *args, **kwargs) -> Any:
@@ -20,11 +20,10 @@ class Export:
 
     def store(self,
               text: AnyStr,
-              fg: AnyStr = None,
-              bg: AnyStr = None) -> None:
+              **kwargs) -> None:
         """Store text in export object."""
 
-        text = self._coloring.style(text, fg=fg, bg=bg)
+        text = self.coloring.style(text, **kwargs)
         self._exported.append(text)
 
 
@@ -34,7 +33,11 @@ class Print(Export):
     def export(self) -> None:
         """Do the export."""
 
-        click.echo(self._delimiter.join(self._exported))
+        styled = self.coloring.style(
+            self._delimiter.join(self._exported),
+            bg='black'
+        )
+        click.echo(styled)
 
 
 class ToString(Export):

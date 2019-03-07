@@ -1,10 +1,12 @@
 # dumpit
-## Print python objects like a boss
+## List all python object attributes with descriptions
 
 [![PyPI version](https://badge.fury.io/py/dumpit.svg)](https://badge.fury.io/py/dumpit)
 [![Build Status](https://travis-ci.com/arrrlo/dumpit.svg?branch=master)](https://travis-ci.com/arrrlo/dumpit)
 ![GitHub](https://img.shields.io/github/license/arrrlo/dumpit.svg?color=blue)
 ![GitHub last commit](https://img.shields.io/github/last-commit/arrrlo/dumpit.svg?color=blue)
+
+![Terminal view](docs/images/terminal.png?3)
 
 ### Installation
 Works with python 3.x
@@ -34,9 +36,18 @@ pdumpit(my_object, colors=False) # False | terminal
 
 # Enable colors in string output
 my_var = fdumpit(my_object, colors='terminal')
+
+# Don't show dunder methods (magic methods)
+pdumpit(my_object, all_=False)
 ```
 
 # Changelog
+
+## 0.4.0
+
+#### Added:
+- Descriptions for every objects attribute.
+- Separate dunders from other attributes. 
 
 ## 0.3.0
 
