@@ -13,8 +13,7 @@ class TestView(unittest.TestCase):
         self.maxDiff = None
 
         class TestObject:
-            foo = list()
-            bar = dict()
+            foo = None
 
         _object = TestObject()
         _indent = Indent(depth=0, spaceholder='')
