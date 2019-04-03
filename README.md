@@ -43,6 +43,11 @@ pdumpit(my_object, all_=False)
 
 # Changelog
 
+## 0.4.1
+
+#### Fixed
+- dunder methods description formatting and new lines.
+
 ## 0.4.0
 
 #### Added:
