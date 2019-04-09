@@ -43,6 +43,11 @@ pdumpit(my_object, all_=False)
 
 # Changelog
 
+## 0.4.2
+
+#### Fixed
+- Dependency version changed: Click 6.7 -> Click 7.0
+
 ## 0.4.1
 
 #### Fixed
