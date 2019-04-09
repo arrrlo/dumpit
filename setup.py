@@ -8,7 +8,7 @@ def readme():
 
 setup(
     name='dumpit',
-    version='0.4.1',
+    version='0.4.2',
 
     description='Print python objects like a boss',
     long_description=readme(),
@@ -31,7 +31,7 @@ setup(
 
     packages=find_packages(),
     install_requires=[
-        'click~=6.7',
+        'click~=7.0',
         'termcolor~=1.1.0',
         'terminaltables==3.1.0',
     ],
