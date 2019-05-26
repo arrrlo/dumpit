@@ -258,6 +258,6 @@ def get_description(attribute: Any, name: AnyStr,
             desc = ''
 
     if desc:
-        desc = desc.replace('\n', f'\n{indent}')
+        desc = desc.replace('\n', '\n{}'.format(indent))
 
     return desc

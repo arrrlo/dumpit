@@ -88,14 +88,14 @@ class Vertical(View):
             attribute = getattr(self._data, value)
 
             # store objects attribute name
-            self._export.store(f'{value}:', fg=self._type_color(value))
+            self._export.store('{}:'.format(value), fg=self._type_color(value))
 
             # second indentation
             with self._indent as indent:
 
                 # store objects attribute type
                 self._export.store(
-                    f'{indent()}{OBJECT_TYPE}{str(type(attribute))}',
+                    '{}{}{}'.format(indent(), OBJECT_TYPE, str(type(attribute))),
                     fg='blue', bold=True
                 )
 
@@ -104,18 +104,20 @@ class Vertical(View):
                 # store objects method arguments
                 if args:
                     self._export.store(
-                        f'{indent()}{OBJECT_ARGS}{str(args)}')
+                        '{}{}{}'.format(indent(), OBJECT_ARGS, str(args))
+                    )
 
                 # get attribute description with indentation
                 sh = self._indent.spaceholder()
                 desc = get_description(
                     attribute, value,
-                    indent=f'{indent()}{sh*len(OBJECT_DESC)}'
+                    indent='{}{}'.format(indent(), sh*len(OBJECT_DESC))
                 )
                 if desc:
                     # store attribute description
                     self._export.store(
-                        f'{indent()}{OBJECT_DESC}{desc}')
+                        '{}{}{}'.format(indent(), OBJECT_DESC, desc)
+                    )
 
                 self._export.store(indent())
 

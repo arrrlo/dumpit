@@ -43,6 +43,11 @@ pdumpit(my_object, all_=False)
 
 # Changelog
 
+## 0.5.0
+
+#### Fixed
+- Python 3 compatibility
+
 ## 0.4.2
 
 #### Fixed
