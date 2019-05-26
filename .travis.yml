@@ -10,12 +10,12 @@ script:
   - pytest -vvv
 
 deploy:
-  skip_cleanup: true
+#  skip_cleanup: true
   provider: pypi
   distributions: sdist bdist_wheel
   user: "arrrlo"
   password:
     secure: "ewTWITb+RXJ6ro1vzNNdiOXdjg5CBbP8hOKg8+UDzmL65uDQ3cbmijnj7AhiN/qliqNVkUP+uvBoEoNBMqF1IoyeH+KTUIsWVvS3ruGiLcmgIfStJ2stLqQXpCfE0KzqWXVfFPMwFK9uOCSt+XyiRrJkPWNhFLSbifHnVlbaTa9NqLQLZ+usGHOb2oqraUBiPMFnHXmD/lkYKbJ8Jfe+4Y8jw4s+LH2sGLnK+oLRcu0Pn2Ji+EZWPvSWLaYGNM3G6yXdUooHI3wqoxuYn0FcdwtkNKJPdYxXYgvxmE2zc9Z3Rnbse8lRC/VOjZ/wYY4bCt+Yq4XL3lk5jxr+H/ZMRHOKr066DLxFDi9CronFFLI5x1hSsy4jHNcHnoRsp6DHVogFVQpOA996MISs+dUh1ApzGTe5r9eD9ZOds15G8prhtXtuGHEOPpWXVG3yvGuHqf3L5INMlIXmcWKwQ7C24ibSXEDbnh9WhSr0jY6fQDGdm1ZQr6LGZ+xfsSAXwbfC4n8ssQa0qz62/gAoIUvF8vkdStK8ZQduRnBPx2xed8J6lh79cV7/XeS2AoYRLqd4ZViLQLtwT7/Q2gZaZwoOlvqynvo9ldvHq3oqTKohIQ/0yZ6hiV/VeCCLE7le88E+bP7sLFmXQBpYOVibkRJANvRr3iZjkrfoMIJaElHgXgk="
   skip_existing: true
-  on:
-    branch: master
+#  on:
+#    branch: master
