@@ -3,6 +3,12 @@
 
 [![PyPI version](https://badge.fury.io/py/dumpit.svg)](https://badge.fury.io/py/dumpit)
 [![Build Status](https://travis-ci.com/arrrlo/dumpit.svg?branch=master)](https://travis-ci.com/arrrlo/dumpit)
+
+![GitHub issues](https://img.shields.io/github/issues/arrrlo/dumpit.svg)
+![GitHub closed issues](https://img.shields.io/github/issues-closed/arrrlo/dumpit.svg)
+![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/arrrlo/dumpit.svg)
+
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/dumpit.svg)
 ![GitHub](https://img.shields.io/github/license/arrrlo/dumpit.svg?color=blue)
 ![GitHub last commit](https://img.shields.io/github/last-commit/arrrlo/dumpit.svg?color=blue)
 
