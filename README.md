@@ -1,8 +1,10 @@
-# dumpit
+# dumpit  
+
 ## List all python object attributes with descriptions
 
 [![PyPI version](https://badge.fury.io/py/dumpit.svg)](https://badge.fury.io/py/dumpit)
 [![Build Status](https://travis-ci.com/arrrlo/dumpit.svg?branch=master)](https://travis-ci.com/arrrlo/dumpit)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bac341f96271404883c9df270492c962)](https://www.codacy.com/app/arrrlo/dumpit?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=arrrlo/dumpit&amp;utm_campaign=Badge_Grade)
 
 ![GitHub issues](https://img.shields.io/github/issues/arrrlo/dumpit.svg)
 ![GitHub closed issues](https://img.shields.io/github/issues-closed/arrrlo/dumpit.svg)
@@ -15,7 +17,6 @@
 ![Terminal view](docs/images/terminal.png?3)
 
 ### Installation
-Works with python 3.x
 
 ```
 pip install dumpit
@@ -43,41 +44,47 @@ pdumpit(my_object, colors=False) # False | terminal
 # Enable colors in string output
 my_var = fdumpit(my_object, colors='terminal')
 
-# Don't show dunder methods (magic methods)
-pdumpit(my_object, all_=False)
+# Show dunder methods (magic methods)
+pdumpit(my_object, all_=True)
 ```
 
 # Changelog
 
+## 0.6.0
+
+#### Fixed in 0.6.0
+-   all_ parameter default value is now False
+-   code formatting 
+
 ## 0.5.0
 
-#### Fixed
-- Python 3 compatibility
+#### Fixed in 0.5.0
+-   Python 3 compatibility
 
 ## 0.4.2
 
-#### Fixed
-- Dependency version changed: Click 6.7 -> Click 7.0
+#### Fixed in 0.4.2
+-   Dependency version changed: Click 6.7 -> Click 7.0
 
 ## 0.4.1
 
-#### Fixed
-- dunder methods description formatting and new lines.
+#### Fixed in 0.4.1
+-   Dunder methods description formatting and new lines.
 
 ## 0.4.0
 
-#### Added:
-- Descriptions for every objects attribute.
-- Separate dunders from other attributes. 
+#### Added in 0.4.0
+-   Descriptions for every objects attribute.
+-   Separate dunders from other attributes. 
 
 ## 0.3.0
 
-#### Added:
-- Analyse is now view.
-- Table view support: Print object contents in table view in terminal.
-- Warnings: Prints warnings in terminal if unknown coloring or view is used.
+#### Added in 0.3.0
+-   Analyse is now view.
+-   Table view support: Print object contents in table view in terminal.
+-   Warnings: Prints warnings in terminal if unknown coloring or view is used.
 
 ## 0.2.0
 
-#### Added:
-- Coloring support: Terminal colors for object attributes.  
+#### Added 0.2.0
+-   Coloring support: Terminal colors for object attributes.  

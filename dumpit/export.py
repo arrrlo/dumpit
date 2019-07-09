@@ -1,6 +1,6 @@
 import click
 from abc import abstractmethod
-from typing import Any, AnyStr, List
+from typing import Any, AnyStr
 
 from dumpit.coloring import Coloring
 
@@ -30,7 +30,7 @@ class Export:
 class Print(Export):
     """Export by printing to standard output."""
 
-    def export(self) -> None:
+    def export(self, *args, **kwargs) -> None:
         """Do the export."""
 
         styled = self.coloring.style(
@@ -44,7 +44,7 @@ class ToString(Export):
     """Export by storing into class variable
     in textual format."""
 
-    def export(self) -> AnyStr:
+    def export(self, *args, **kwargs) -> AnyStr:
         """Do the export."""
 
         return self._delimiter.join(self._exported)
