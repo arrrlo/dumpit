@@ -18,7 +18,7 @@
 
 ### Installation
 
-```
+```bash
 pip install dumpit
 ```
 
@@ -48,43 +48,43 @@ my_var = fdumpit(my_object, colors='terminal')
 pdumpit(my_object, all_=True)
 ```
 
-# Changelog
+### Changelog
 
-## 0.6.0
+#### 0.6.0
 
-#### Fixed in 0.6.0
+##### Fixed in 0.6.0
 -   all_ parameter default value is now False
 -   code formatting 
 
-## 0.5.0
+#### 0.5.0
 
-#### Fixed in 0.5.0
+##### Fixed in 0.5.0
 -   Python 3 compatibility
 
-## 0.4.2
+#### 0.4.2
 
-#### Fixed in 0.4.2
+##### Fixed in 0.4.2
 -   Dependency version changed: Click 6.7 -> Click 7.0
 
-## 0.4.1
+#### 0.4.1
 
-#### Fixed in 0.4.1
+##### Fixed in 0.4.1
 -   Dunder methods description formatting and new lines.
 
-## 0.4.0
+#### 0.4.0
 
-#### Added in 0.4.0
+##### Added in 0.4.0
 -   Descriptions for every objects attribute.
 -   Separate dunders from other attributes. 
 
-## 0.3.0
+#### 0.3.0
 
-#### Added in 0.3.0
+##### Added in 0.3.0
 -   Analyse is now view.
 -   Table view support: Print object contents in table view in terminal.
 -   Warnings: Prints warnings in terminal if unknown coloring or view is used.
 
-## 0.2.0
+#### 0.2.0
 
-#### Added 0.2.0
+##### Added 0.2.0
 -   Coloring support: Terminal colors for object attributes.  
