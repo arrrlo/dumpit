@@ -1,12 +1,14 @@
 import click
 from inspect import signature
 from abc import abstractmethod
-from typing import Any, AnyStr, List
 from terminaltables import AsciiTable
+from typing import Any, AnyStr, List, TYPE_CHECKING
 
-from dumpit.indent import Indent
-from dumpit.export import Export
 from dumpit.description import get_description
+
+if TYPE_CHECKING:
+    from dumpit.indent import Indent
+    from dumpit.export import Export
 
 
 OBJECT_TYPE = 'type: '
