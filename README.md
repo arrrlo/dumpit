@@ -44,8 +44,8 @@ pdumpit(my_object, colors=False) # False | terminal
 # Enable colors in string output
 my_var = fdumpit(my_object, colors='terminal')
 
-# Don't show dunder methods (magic methods)
-pdumpit(my_object, all_=False)
+# Show dunder methods (magic methods)
+pdumpit(my_object, all_=True)
 ```
 
 # Changelog
