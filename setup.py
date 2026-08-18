@@ -34,7 +34,7 @@ setup(
 
     packages=find_packages(),
     install_requires=[
-        'click~=7.0',
+        'click>=7.0',
         'termcolor~=1.1.0',
         'terminaltables==3.1.0',
     ],
